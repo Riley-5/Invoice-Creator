@@ -16,12 +16,19 @@ let services = [
 let servicesRequested = []
 const buttonContainer = document.querySelector("#button-container")
 
-function renderButtons(arr) {
-    let buttons = ""
-    for (let i = 0; i < arr.length; i++) {
-        buttons += `<button class="service-btn">${arr[i].service}: $${arr[i].amount}</button>`
-    }
-    buttonContainer.innerHTML = buttons
-}
+/*
+    Loops through the services array 
+    returns each service in a button
+*/
+services.map((serviceItem) => {
+    (
+        buttonContainer.innerHTML += `<button class="service-btn">${serviceItem.service} $${serviceItem.amount}</button>`
+    )
+})
 
-renderButtons(services)
+
+/*
+    Click on button
+    add 
+*/
+
