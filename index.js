@@ -36,11 +36,18 @@ services.map((serviceItem) => {
 /*
     Click on a service button
     add the item on the button to the servicesRequested array
-    add the service to the "TASK" and amount to "TOTAL"
 */
 function addTask(e) {
-    console.log(e.target.id)
+    const id = e.target.id
+    services.map((serviceItem) => {
+        if (id == serviceItem.id) {
+            servicesRequested.push(serviceItem)
+            return servicesRequested
+        }
+    })
 }
+
+
 
 
 
