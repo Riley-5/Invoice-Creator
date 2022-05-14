@@ -1,13 +1,16 @@
 let services = [
     {
+        id: 1,
         service: "Wash Car",
         amount: 10
     },
     {
+        id: 2,
         service: "Mow Lawn",
         amount: 20
     },
     {
+        id: 3,
         service: "Pull Weeds",
         amount: 30
     }
@@ -22,13 +25,23 @@ const buttonContainer = document.querySelector("#button-container")
 */
 services.map((serviceItem) => {
     (
-        buttonContainer.innerHTML += `<button class="service-btn">${serviceItem.service} $${serviceItem.amount}</button>`
+        buttonContainer.innerHTML += `
+            <button id="${serviceItem.id}" class="service-btn" onclick="addTask(event)">
+                ${serviceItem.service}: $${serviceItem.amount}
+            </button>
+        `
     )
 })
 
-
 /*
-    Click on button
-    add 
+    Click on a service button
+    add the item on the button to the servicesRequested array
+    add the service to the "TASK" and amount to "TOTAL"
 */
+function addTask(e) {
+    console.log(e.target.id)
+}
+
+
+
 
