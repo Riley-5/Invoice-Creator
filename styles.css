@@ -1,0 +1,94 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#heading-container {
+    background-color: #3A69D2;
+    width: 550px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F2937;
+    width: 550px;
+    height: 100px;
+}
+
+.service-btn {
+    width: 142.11px;
+    height: 45px;
+    border-radius: 7px;
+    padding: 13px, 9px, 13px;
+    margin: 15px;
+    background-color: #D1D4F4;
+    border: none;
+}
+
+#task-container {
+    background-color: #1F2937;
+    width: 550px;  
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+#task-el {
+    width: 412.5px;
+    padding-left: 20px;
+}
+
+#total-el {
+    width: 137.5px;
+    float: right;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#amount {
+    background-color: #1F2937;
+    display: flex;
+    width: 550px;
+}
+
+#notes-container {
+    width: 400px;
+}
+
+#total-amount {
+    float: right;
+    width: 150px;
+}
+
+#send-invoice-container {
+    background-color: #1F2937;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+#sendInvoice-btn {
+    background-color: #3A69D2;
+    padding: 9px 17px 9px 15px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    width: 473px;
+    height: 44px;
+}
