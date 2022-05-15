@@ -76,6 +76,7 @@ function renderItems(arr, id) {
 */
 sendInvoiceBtn.addEventListener("click", () => {
     servicesRequested = []
+    sum = 0
     taskEl.innerHTML = `
         <p>TASK</p>
     `
