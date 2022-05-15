@@ -16,8 +16,11 @@ let services = [
     }
 ]
 
-let servicesRequested = []
 const buttonContainer = document.querySelector("#button-container")
+const taskEl = document.querySelector("#task-el")
+const totalEl = document.querySelector("#total-el")
+const totalAmount = document.querySelector("#total-amount")
+let sum = 0
 
 /*
     Loops through the services array 
@@ -35,16 +38,25 @@ services.map((serviceItem) => {
 
 /*
     Click on a service button
-    add the item on the button to the servicesRequested array
+    add the total of services added to the TOTAL AMOUNT
 */
 function addTask(e) {
     const id = e.target.id
     services.map((serviceItem) => {
         if (id == serviceItem.id) {
-            servicesRequested.push(serviceItem)
-            return servicesRequested
+            taskEl.innerHTML += `
+                <p>${serviceItem.service}</p>
+            `
+            totalEl.innerHTML += `
+                <p>${serviceItem.amount}</p>
+            `
+            sum += serviceItem.amount
         }
     })
+    totalAmount.innerHTML = `
+        <p>TOTAL AMOUNT</p>
+        <p>${sum}</p>
+    `
 }
 
 
