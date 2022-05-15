@@ -16,10 +16,12 @@ let services = [
     }
 ]
 
+let servicesRequested = []
 const buttonContainer = document.querySelector("#button-container")
 const taskEl = document.querySelector("#task-el")
 const totalEl = document.querySelector("#total-el")
 const totalAmount = document.querySelector("#total-amount")
+const sendInvoiceBtn = document.querySelector("#sendInvoice-btn")
 let sum = 0
 
 /*
@@ -38,15 +40,25 @@ services.map((serviceItem) => {
 
 /*
     Click on a service button
-    add the total of services added to the TOTAL AMOUNT
+    add the service to the serivesRequested array if the item is not in the array already
 */
 function addTask(e) {
     const id = e.target.id
     services.map((serviceItem) => {
-        if (id == serviceItem.id) {
+        if (id == serviceItem.id && !servicesRequested.includes(serviceItem)) {
+            servicesRequested.push(serviceItem)
+            renderItems(servicesRequested, id)
+        }
+    })
+}
+
+function renderItems(arr, id) {
+    arr.map((serviceItem) => {
+        if (serviceItem.id == id) {
             taskEl.innerHTML += `
                 <p>${serviceItem.service}</p>
             `
+        
             totalEl.innerHTML += `
                 <p>${serviceItem.amount}</p>
             `
@@ -59,8 +71,20 @@ function addTask(e) {
     `
 }
 
+/*
+    Button clicked reset application
+*/
+sendInvoiceBtn.addEventListener("click", () => {
+    servicesRequested = []
+    taskEl.innerHTML = `
+        <p>TASK</p>
+    `
 
+    totalEl.innerHTML = `
+        <p>TOTAL AMOUNT</p>
+    `
 
-
-
-
+    totalAmount.innerHTML = `
+        <p>TOTAL AMOUNT</p>
+    `
+})
